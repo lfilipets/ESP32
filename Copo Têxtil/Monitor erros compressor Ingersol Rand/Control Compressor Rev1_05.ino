@@ -45,10 +45,12 @@
 // Telemóveis:
 
 String phoneNumber01 = "+351962197960";
+String phoneNumber02 = "+351910574192";
 
 // API Keys:
 
 String apiKey01 = "7979071";
+String apiKey02 = "1724402";
 
 // Mensagens:
 
@@ -140,8 +142,13 @@ void setup() {
 
    WiFi.begin(ssid, password);
    delay(5000);
-   //Callmebot.whatsappMessage(phoneNumber01, apiKey01, messsage01);
-	 //Serial.println(Callmebot.debug());
+
+   Callmebot.whatsappMessage(phoneNumber01, apiKey01, messsage01);
+	 Serial.println(Callmebot.debug());
+
+   Callmebot.whatsappMessage(phoneNumber02, apiKey02, messsage01);
+	 Serial.println(Callmebot.debug());
+   
    while (true) {
     switch (WiFi.status()) {
       case WL_CONNECTED:
@@ -199,8 +206,13 @@ void setup() {
         lcd.setCursor(0, 1);
         lcd.print("Enviada... ");
           delay(5000);
-    //Callmebot.whatsappMessage(phoneNumber01, apiKey01, messsage02);
-	  //Serial.println(Callmebot.debug());
+
+      Callmebot.whatsappMessage(phoneNumber01, apiKey01, messsage02);
+	    Serial.println(Callmebot.debug());
+
+      Callmebot.whatsappMessage(phoneNumber02, apiKey02, messsage02);
+	    Serial.println(Callmebot.debug());
+
         return;
 
 
@@ -300,5 +312,4 @@ timeClient.update();
 
 
 }
-
 
